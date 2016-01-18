@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="TextAnalyzer.WPF.View.ReportView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:model="clr-namespace:TextAnalyzer.WPF.Model"
+    Height="Auto" Width="Auto"
+             DataContext="{Binding Path=TextEditorViewModel,Source={StaticResource ViewModelLocator}}">
+
+    <Grid>
+        <ListView Margin="10" Name="ReportListView" ItemsSource="{Binding ReportModels}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="No" Width="120" DisplayMemberBinding="{Binding Id, Mode=TwoWay}" />
+                    <GridViewColumn Header="Word" Width="200" DisplayMemberBinding="{Binding Word, Mode=TwoWay}" />
+                    <GridViewColumn Header="Occurance" Width="100" DisplayMemberBinding="{Binding Occurance, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
